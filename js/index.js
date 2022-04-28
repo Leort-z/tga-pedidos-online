@@ -74,20 +74,35 @@ const renderCartList = () => {
   const cartItems = getItems() || []
   const cartList = document.getElementById('cart-list')
 
-  for (const [key, value] of Object.entries(cartItems)) {
+  let totalCost = 0
+
+  for (const [key, quantity] of Object.entries(cartItems)) {
     let item = document.getElementById(`list-item-${key}`)
     const { name, cost } = items.find((item) => item.id == key)
     const formattedCost = formatter.format(cost)
     if (item) {
-      item.innerHTML = `${name} - quantidade: ${value} - ${formattedCost}`
+      item.innerHTML = `${name} - quantidade: ${quantity} - ${formattedCost}`
       appendButtons(item, key)
     } else {
       item = document.createElement('li')
       item.setAttribute('id', `list-item-${key}`)
-      item.innerHTML = `${name} - quantidade: ${value} - ${formattedCost}`
+      item.innerHTML = `${name} - quantidade: ${quantity} - ${formattedCost}`
       cartList.append(item)
       appendButtons(item, key)
     }
+
+    totalCost += cost * quantity
+  }
+
+  const totalCostElement = document.getElementById('cart-item-total-cost')
+  if (totalCostElement) {
+    totalCostElement.innerHTML = `Total do pedido: ${formatter.format(totalCost)}`
+  } else {
+    const totalCostElement = document.createElement('h4')
+    totalCostElement.setAttribute('id', 'cart-item-total-cost')
+    totalCostElement.innerHTML = `Total do pedido: ${formatter.format(totalCost)}`
+    const cartListHeader = document.getElementById('cart-list-wrapper')
+    cartListHeader.append(totalCostElement)
   }
 }
 
