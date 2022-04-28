@@ -2,31 +2,37 @@
   {
     "id": 1,
     "name": "Livros",
-    "cost": 9.9
+    "cost": 9.9,
+    "img": "../images/livros.jpg"
   },
   {
     "id": 2,
     "name": "Smartphone",
-    "cost": 2500.0
+    "cost": 2500.0,
+    "img": "../images/smartphone.jfif"
   },
   {
     "id": 3,
     "name": "Notebook",
-    "cost": 3400.0
+    "cost": 3400.0,
+    "img": "../images/notebook.webp"
   },
   {
     "id": 4,
     "name": "Monitor",
-    "cost": 750.0
+    "cost": 750.0,
+    "img": "../images/monitor.webp"
   },
   {
     "id": 5,
     "name": "Mouse",
-    "cost": 120.0
+    "cost": 120.0,
+    "img": "../images/mouse.jfif"
   },
   {
     "id": 6,
     "name": "Teclado",
-    "cost": 200.0
+    "cost": 200.0,
+    "img": "../images/teclado.jpg"
   }
 ]
