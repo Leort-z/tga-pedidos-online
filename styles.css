@@ -87,10 +87,6 @@ div.actions-prod-wrapper > button {
   color: rgb(128, 3, 3);
 }
 
-div.img-prod-wrapper {
-  height: 200px;
-}
-
 img.img-prod {
   width: 100%;
   max-height: 200px;
